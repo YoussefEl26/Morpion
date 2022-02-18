@@ -1,20 +1,28 @@
 console.log("Ce programme JS vient d'être chargé");
 $(document).ready(function () {
 	console.log("Le document est pret");
+
+	//Initialisation du joueur
 	var joueur = "X";
+
+	//Initialisation de la victoire
+	conVict = true;
 
 	//Travail sur les cases
 	$('#morpion td').click(function () {
 		console.log("Le bouton de la souris a été enfoncé.");
-		if (estValid($(this)) == true) {
+		if (estValid($(this)) && conVict == true) {
+			console.log(estValid($(this)) && conVict == true)
 			applyValue($(this))
 			const vic = rechVict()
 			if (vic == true) {
 				if (joueur == "O") {
 					$('p').text("Victoire de : X ")
+					conVict = false;
 				}
 				else {
 					$('p').text("Victoire de : O ")
+					conVict = false;
 				}
 			}
 		}
