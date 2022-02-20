@@ -63,6 +63,7 @@ $(document).ready(function () {
 		$(".case").removeClass("X");
 		joueur = "X";
 		$('.erreur').text("");
+		conVict = true
 	});
 
 	//Fonction permettant de savoir si il y'a une victoire
